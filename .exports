@@ -1,0 +1,44 @@
+function GGB() {
+     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+function export_ps1_git_branch() {
+  local BLUE='\033[0;34m'
+  local RED='\033[0;31m'
+  local WHITE='\033[1;37m'
+
+  _GitBranchName=$(GGB)
+  case $_GitBranchName in
+	master)
+	  lightBranchName=$RED$_GitBranchName
+	  ;;
+	develop)
+	  lightBranchName=$BLUE$_GitBranchName
+      ;;
+    :)
+      lightBranchName=""
+      ;;
+	*)
+	  lightBranchName=$WHITE$_GitBranchName
+     ;;
+	esac
+	echo -e $lightBranchName
+}
+export PS1='\[\033[1;37m\][\A]\[\033[1;32m\][\w]$(export_ps1_git_branch)\[\033[0m\]\$ '
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+source /usr/local/bin/virtualenvwrapper.sh
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added for postgres
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+
+# for docker-machine
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/avezhenya/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"

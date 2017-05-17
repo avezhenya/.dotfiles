@@ -24,21 +24,24 @@ function export_ps1_git_branch() {
 	esac
 	echo -e $lightBranchName
 }
-export PS1='\[\033[1;37m\][\A]\[\033[1;32m\][\w]$(export_ps1_git_branch)\[\033[0m\]\$ '
+export PS1='\[\033[1;37m\][\A]\[\033[1;32m\][\w]$(export_ps1_git_branch)\[\033[0m\][\n] $ '
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-
+export JOINT_ENVIRONMENT=develpoment
 source /usr/local/bin/virtualenvwrapper.sh
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/mysql/bin:$PATH"
 ### Added for postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 # for docker-machine
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/avezhenya/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://192.168.99.100:2376"
+#export DOCKER_CERT_PATH="/Users/avezhenya/.docker/machine/machines/default"
+#export DOCKER_MACHINE_NAME="default"
+/usr/local/bin/bash
+export CAT_PATH="/Users/avezhenya/work/cat/"

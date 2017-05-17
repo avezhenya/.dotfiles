@@ -25,3 +25,4 @@ Session.vim
 
 ## Directory-based project format:
 .idea/
+.cache

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 source $HOME/.dotfiles/.exports
 source $HOME/.dotfiles/.aliases

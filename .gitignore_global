@@ -11,6 +11,8 @@
 .Trashes
 .VolumeIcon.icns
 
+#javaScript
+.node_modules/
 
 ### Vim ###
 [._]*.s[a-w][a-z]
@@ -26,3 +28,6 @@ Session.vim
 ## Directory-based project format:
 .idea/
 .cache
+
+## VSCode
+.vscode/

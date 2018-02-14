@@ -28,7 +28,6 @@ export PS1='\[\033[1;37m\][\A]\[\033[1;32m\][\w]$(export_ps1_git_branch)\[\033[0
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export JOINT_ENVIRONMENT=develpoment
 source /usr/local/bin/virtualenvwrapper.sh
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
@@ -36,7 +35,14 @@ source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bas
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
+
 ### Added for postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
-export CAT_PATH="/Users/avezhenya/work/cat/"
+### Added for Golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=/Users/avezhenya/work/go
+export PATH=$PATH:$GOPATH/bin
+
+### Added for VSCode
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

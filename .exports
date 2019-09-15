@@ -2,6 +2,10 @@ function GGB() {
      git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
+function iterm2_print_user_vars() {
+  iterm2_set_user_var pythonVersion $(python -V | awk '{ print $2 }')
+}
+
 function export_ps1_git_branch() {
   local BLUE='\033[0;34m'
   local RED='\033[0;31m'
@@ -49,3 +53,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 ### Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
+
+### Poetry
+export PATH="$HOME/.poetry/bin:$PATH"

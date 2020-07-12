@@ -1,25 +1,18 @@
 #Shell
 alias :q='exit'
-alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
-alias ...='.. ..'
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
 alias ln='ln -i'
 alias md='mkdir'
-# печатать размеры файлов в удобном для человека виде
+
+# Печатать размеры файлов в удобном для человека виде
 alias df='df -h'
 
 # По умолчанию пинговать 5 раз
 alias ping='ping -c 5'
 
-# Editor
-alias e='vim'
-
 #some git
 alias py='python'
 alias gti='git'
-alias sub-up='git submodule update'
-alias pull-dev='git pull origin develop'
-alias push-dev='git push origin develop'
 alias st='git status'

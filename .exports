@@ -1,59 +1,17 @@
-function GGB() {
-     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
-
-function iterm2_print_user_vars() {
-  iterm2_set_user_var pythonVersion $(python -V | awk '{ print $2 }')
-}
-
-function export_ps1_git_branch() {
-  local BLUE='\033[0;34m'
-  local RED='\033[0;31m'
-  local WHITE='\033[1;37m'
-
-  _GitBranchName=$(GGB)
-  case $_GitBranchName in
-	master)
-	  lightBranchName=$RED$_GitBranchName
-	  ;;
-	develop)
-	  lightBranchName=$BLUE$_GitBranchName
-      ;;
-    :)
-      lightBranchName=""
-      ;;
-	*)
-	  lightBranchName=$WHITE$_GitBranchName
-     ;;
-	esac
-	echo -e $lightBranchName
-}
-export PS1='\[\033[1;37m\][\A]\[\033[1;32m\][\w]$(export_ps1_git_branch)\[\033[0m\] \n$ '
-
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-source /usr/local/bin/virtualenvwrapper.sh
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
-
-### Added for postgres
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
-
 ### Added for Golang
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=/Users/avezhenya/work/go
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=/Users/avezhenya/work/go
+#export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/Users/avezhenya/go/bin
 
 ### Added for VSCode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 ### Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 ### Poetry
 export PATH="$HOME/.poetry/bin:$PATH"

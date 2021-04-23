@@ -31,3 +31,6 @@ Session.vim
 
 ## VSCode
 .vscode/
+
+## Env files
+.env

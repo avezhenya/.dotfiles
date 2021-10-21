@@ -60,3 +60,7 @@
 	user = avezhenya
 [core]
 	excludesfile = ~/.dotfiles/.gitignore_global
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pull]
+	rebase = true

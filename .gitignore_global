@@ -29,6 +29,8 @@ Session.vim
 .idea/
 .cache
 
+tmp/
+
 ## VSCode
 .vscode/
 

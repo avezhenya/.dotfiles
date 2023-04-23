@@ -16,3 +16,6 @@ alias ping='ping -c 5'
 alias py='python'
 alias gti='git'
 alias st='git status'
+
+#k8s
+alias k="kubectl"
